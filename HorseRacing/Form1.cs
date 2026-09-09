@@ -24,10 +24,10 @@ namespace HorseRacing
 
         private void InitializeCustomComponents()
         {
-            this.Text = "Конные скачки";
-            this.Size = new Size(800, 600);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.White;
+            Text = "Конные скачки";
+            Size = new Size(800, 600);
+            StartPosition = FormStartPosition.CenterScreen;
+            BackColor = Color.White;
 
             Label lblTitle = new Label
             {
@@ -37,7 +37,7 @@ namespace HorseRacing
                 AutoSize = true,
                 ForeColor = Color.DarkGreen
             };
-            this.Controls.Add(lblTitle);
+            Controls.Add(lblTitle);
 
             Panel horsePanel = new Panel
             {
@@ -45,7 +45,7 @@ namespace HorseRacing
                 Size = new Size(740, 300),
                 BorderStyle = BorderStyle.FixedSingle
             };
-            this.Controls.Add(horsePanel);
+            Controls.Add(horsePanel);
 
             progressBars = new List<ProgressBar>();
             nameLabels = new List<Label>();
@@ -112,7 +112,7 @@ namespace HorseRacing
                 FlatStyle = FlatStyle.Flat
             };
             btnStart.Click += BtnStart_Click;
-            this.Controls.Add(btnStart);
+            Controls.Add(btnStart);
 
             btnReset = new Button
             {
@@ -162,7 +162,7 @@ namespace HorseRacing
             dgvResults.Columns[3].Width = 100;
             dgvResults.Columns[4].Width = 100;
 
-            this.Controls.Add(dgvResults);
+            Controls.Add(dgvResults);
 
             updateTimer = new System.Windows.Forms.Timer();
             updateTimer.Interval = 100;
@@ -282,7 +282,7 @@ namespace HorseRacing
                     sorted[i].Place = i + 1;
                 }
 
-                this.Invoke((MethodInvoker)delegate
+                Invoke((MethodInvoker)delegate
                 {
                     ShowResults();
                     btnStart.Enabled = true;
@@ -363,7 +363,7 @@ namespace HorseRacing
                 pb.Value = 0;
             }
 
-            this.Text = "Конные скачки";
+            Text = "Конные скачки";
             dgvResults.Rows.Clear();
         }
 
